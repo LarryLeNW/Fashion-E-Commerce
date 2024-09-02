@@ -16,7 +16,7 @@ public class SecurityConfig {
             .authorizeRequests(authorizeRequests ->
                 authorizeRequests.anyRequest().permitAll()
             )
-            .csrf(csrf -> csrf.disable()); // Tùy chọn để vô hiệu hóa CSRF (Chỉ để phát triển)
+            .csrf(csrf -> csrf.disable()); 
         return http.build();
     }
 }
