@@ -17,16 +17,16 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Table(name = "users")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
+	String id;
 
-    private String username;
-    
-    private String password;
-    
-    private LocalDate dob;
-    
-    @ManyToMany
-    Set<Role> roles;
+	String username;
+
+	String password;
+
+	LocalDate dob;
+
+	@ManyToMany
+	Set<Role> roles;
 }
