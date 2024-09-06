@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 
 let Public = () => {
     return (
         <>
-            <header>header</header>
+            <Header />
             <Outlet />
-            <footer>footer</footer>
+            <Footer />
         </>
     );
 };
