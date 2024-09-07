@@ -1,62 +1,104 @@
 import Products from "components/Products/Products";
 import paths from "constant/paths";
-import Public from "layout/public";
-import Blogs from "pages/public/Blogs";
-import ConfirmRegister from "pages/public/ConfirmRegister";
-import DetailBlog from "pages/public/DetailBlog";
-import DetailProduct from "pages/public/DetailProduct";
-import FAQ from "pages/public/FAQ";
-import Home from "pages/public/Home";
-import Introduce from "pages/public/Introduce";
-import Login from "pages/public/Login";
-import OutService from "pages/public/OutService";
+import AdminLayout from "layout/admin";
+import PublicLayout from "layout/public";
+import {
+    BlogManagerPage,
+    DashboardPage,
+    OrderManagerPage,
+    ProductManagerPage,
+    UserManagerPage,
+    VariantProductMangerPage,
+} from "pages/admin";
+import {
+    BlogsPage,
+    ConfirmRegisterPage,
+    DetailBlogPage,
+    DetailProductPage,
+    FAQPage,
+    HomePage,
+    IntroducePage,
+    LoginPage,
+    OutServicePage,
+    ProductsPage,
+} from "pages/public";
+
 import { useRoutes } from "react-router-dom";
 
 function useRouter() {
     const element = useRoutes([
         {
             path: "/",
-            element: <Public />,
+            element: <PublicLayout />,
             children: [
                 {
                     index: true,
-                    element: <Home />,
+                    element: <HomePage />,
                 },
                 {
                     path: paths.LOGIN,
-                    element: <Login />,
+                    element: <LoginPage />,
                 },
                 {
                     path: paths.CONFIRM_REGISTER,
-                    element: <ConfirmRegister />,
+                    element: <ConfirmRegisterPage />,
                 },
                 {
                     path: paths.INTRODUCE,
-                    element: <Introduce />,
+                    element: <IntroducePage />,
                 },
                 {
                     path: paths.BLOGS,
-                    element: <Blogs />,
+                    element: <BlogsPage />,
                 },
                 {
                     path: paths.DETAIL_BLOG,
-                    element: <DetailBlog />,
+                    element: <DetailBlogPage />,
                 },
                 {
                     path: paths.FAQ,
-                    element: <FAQ />,
+                    element: <FAQPage />,
                 },
                 {
                     path: paths.OUR_SERVICES,
-                    element: <OutService />,
+                    element: <OutServicePage />,
                 },
                 {
                     path: paths.PRODUCTS,
-                    element: <Products />,
+                    element: <ProductsPage />,
                 },
                 {
                     path: paths.DETAIL_PRODUCT,
-                    element: <DetailProduct />,
+                    element: <DetailProductPage />,
+                },
+            ],
+        },
+        {
+            element: <AdminLayout />,
+            children: [
+                {
+                    path: paths.ADMIN.HOME,
+                    element: <DashboardPage />,
+                },
+                {
+                    path: paths.ADMIN.USER_MANAGEMENT,
+                    element: <UserManagerPage />,
+                },
+                {
+                    path: paths.ADMIN.BLOG_MANAGEMENT,
+                    element: <BlogManagerPage />,
+                },
+                {
+                    path: paths.ADMIN.ORDER_MANAGEMENT,
+                    element: <OrderManagerPage />,
+                },
+                {
+                    path: paths.ADMIN.PRODUCT_MANAGEMENT,
+                    element: <ProductManagerPage />,
+                },
+                {
+                    path: paths.ADMIN.VARIANT_PRODUCT_MANAGEMENT,
+                    element: <VariantProductMangerPage />,
                 },
             ],
         },
