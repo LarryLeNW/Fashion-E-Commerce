@@ -1,8 +1,6 @@
 import React from "react";
 import Banner from "components/Banner/Banner";
-import Footer from "components/Footer/Footer";
 import Hero from "components/Hero/Hero";
-import Navbar from "components/Navbar/Navbar";
 import Popup from "components/Popup/Popup";
 import Products from "components/Products/Products";
 import Subscribe from "components/Subscribe/Subscribe";
@@ -29,7 +27,6 @@ function Home() {
 
     return (
         <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
-            <Navbar handleOrderPopup={handleOrderPopup} />
             <Hero handleOrderPopup={handleOrderPopup} />
             <Products />
             <TopProducts handleOrderPopup={handleOrderPopup} />
@@ -37,7 +34,6 @@ function Home() {
             <Subscribe />
             <Products />
             <Testimonials />
-            <Footer />
             <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
         </div>
     );
