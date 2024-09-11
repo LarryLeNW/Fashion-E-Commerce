@@ -1,5 +1,5 @@
 function Login() {
-    return <div className="h-full">Login</div>;
+    return <div>Login</div>;
 }
 
 export default Login;
